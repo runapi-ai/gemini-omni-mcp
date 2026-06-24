@@ -1,7 +1,7 @@
 {
   "name": "@runapi.ai/gemini-omni-mcp",
-  "version": "0.1.1",
-  "description": "Gemini Omni MCP server for RunAPI — create Gemini Omni AI tasks (create audio, create character, text to video), poll status, and check pricing across 3 models with one API key.",
+  "version": "0.1.2",
+  "description": "RunAPI Gemini Omni MCP server for multimodal generation: create tasks, poll results, and check pricing across 3 model variants from Claude Code, Codex, Cursor, and VS Code.",
   "type": "module",
   "main": "dist/src/index.js",
   "bin": {
@@ -25,12 +25,16 @@
   },
   "keywords": [
     "runapi",
+    "runapi-ai",
     "mcp",
+    "mcp-server",
     "model-context-protocol",
-    "ai",
+    "ai-agents",
+    "claude-code",
+    "cursor",
+    "vscode",
     "gemini-omni",
     "gemini-omni-mcp",
-    "gemini-omni-ai",
     "gemini-omni-api",
     "video-generation",
     "ai-video",
@@ -42,7 +46,7 @@
   ],
   "author": "RunAPI",
   "license": "Apache-2.0",
-  "homepage": "https://runapi.ai",
+  "homepage": "https://runapi.ai/models/gemini-omni",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/runapi-ai/gemini-omni-mcp.git"

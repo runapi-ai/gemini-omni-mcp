@@ -1,0 +1,51 @@
+{
+  "endpoints": {
+    "gemini-omni-audio/create_audio": {
+      "unit_price_cents": 0
+    },
+    "gemini-omni-character/create_character": {
+      "unit_price_cents": 0
+    },
+    "gemini-omni-text-to-video/text_to_video": {
+      "unit_price_cents": 360,
+      "billing_config": {
+        "keys": [
+          "input_mode",
+          "duration_seconds",
+          "output_resolution"
+        ],
+        "matrix": {
+          "generated": {
+            "4": {
+              "720p": 90,
+              "1080p": 90,
+              "4k": 210
+            },
+            "6": {
+              "720p": 120,
+              "1080p": 120,
+              "4k": 240
+            },
+            "8": {
+              "720p": 150,
+              "1080p": 150,
+              "4k": 270
+            },
+            "10": {
+              "720p": 180,
+              "1080p": 180,
+              "4k": 300
+            }
+          },
+          "video": {
+            "any": {
+              "720p": 240,
+              "1080p": 240,
+              "4k": 360
+            }
+          }
+        }
+      }
+    }
+  }
+}

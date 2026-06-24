@@ -1,0 +1,80 @@
+{
+  "catalog_models": [
+    "gemini-omni-audio",
+    "gemini-omni-character",
+    "gemini-omni-text-to-video"
+  ],
+  "actions": {
+    "gemini-omni/create-audio": {
+      "model": "Gemini Omni",
+      "endpoint": "create_audio",
+      "models": [
+        "gemini-omni-audio"
+      ],
+      "fields_by_model": {
+        "gemini-omni-audio": {
+          "name": {
+            "required": true
+          },
+          "audio_id": {
+            "required": true
+          }
+        }
+      }
+    },
+    "gemini-omni/create-character": {
+      "model": "Gemini Omni",
+      "endpoint": "create_character",
+      "models": [
+        "gemini-omni-character"
+      ],
+      "fields_by_model": {
+        "gemini-omni-character": {
+          "descriptions": {
+            "required": true
+          },
+          "reference_image_url": {
+            "required": true
+          }
+        }
+      }
+    },
+    "gemini-omni/text-to-video": {
+      "model": "Gemini Omni",
+      "endpoint": "text_to_video",
+      "models": [
+        "gemini-omni-text-to-video"
+      ],
+      "fields_by_model": {
+        "gemini-omni-text-to-video": {
+          "prompt": {
+            "required": true
+          },
+          "aspect_ratio": {
+            "enum": [
+              "16:9",
+              "9:16"
+            ]
+          },
+          "duration_seconds": {
+            "enum": [
+              4,
+              6,
+              8,
+              10
+            ],
+            "required": true
+          },
+          "output_resolution": {
+            "enum": [
+              "720p",
+              "1080p",
+              "4k"
+            ]
+          },
+          "reference_image_urls": {}
+        }
+      }
+    }
+  }
+}

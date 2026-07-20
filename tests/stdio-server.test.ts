@@ -47,6 +47,11 @@ describe("gemini-omni stdio MCP server", () => {
     const names = tools.tools.map((tool) => tool.name).sort();
     expect(names).toEqual(["check_pricing","create_audio","create_character","get_task","login","text_to_video"]);
 
+    for (const endpoint of ["create_audio","create_character"]) {
+      const tool = tools.tools.find((candidate) => candidate.name === endpoint);
+      expect(tool?.inputSchema.properties, `${endpoint} is synchronous and must not expose polling controls`).not.toHaveProperty("wait");
+    }
+
     const pricing = await client.callTool({ name: "check_pricing", arguments: {} });
     const content = pricing.content?.[0];
     if (!content || content.type !== "text") {
@@ -56,7 +61,7 @@ describe("gemini-omni stdio MCP server", () => {
 
     // Every advertised model must price without naming an endpoint, even one
     // that only lives on a non-primary endpoint of a multi-endpoint line.
-    for (const model of ["gemini-omni-audio","gemini-omni-character","gemini-omni-text-to-video"]) {
+    for (const model of ["gemini-omni-audio","gemini-omni-character","gemini-omni-flash-preview","gemini-omni-text-to-video"]) {
       const priced = await client.callTool({ name: "check_pricing", arguments: { model } });
       const pricedContent = priced.content?.[0];
       if (!pricedContent || pricedContent.type !== "text") {

@@ -2,22 +2,32 @@
   "catalog_models": [
     "gemini-omni-audio",
     "gemini-omni-character",
+    "gemini-omni-flash-preview",
     "gemini-omni-text-to-video"
   ],
   "actions": {
     "gemini-omni/create-audio": {
       "model": "Gemini Omni",
       "endpoint": "create_audio",
+      "task_type": "synchronous",
       "models": [
         "gemini-omni-audio"
       ],
       "fields_by_model": {
         "gemini-omni-audio": {
-          "name": {
+          "audio_id": {
+            "type": "string",
             "required": true
           },
-          "audio_id": {
+          "name": {
+            "type": "string",
             "required": true
+          },
+          "voice_description": {
+            "type": "string"
+          },
+          "example_dialogue": {
+            "type": "string"
           }
         }
       }
@@ -25,16 +35,25 @@
     "gemini-omni/create-character": {
       "model": "Gemini Omni",
       "endpoint": "create_character",
+      "task_type": "synchronous",
       "models": [
         "gemini-omni-character"
       ],
       "fields_by_model": {
         "gemini-omni-character": {
           "descriptions": {
+            "type": "string",
             "required": true
           },
           "reference_image_url": {
+            "type": "string",
             "required": true
+          },
+          "audio_ids": {
+            "type": "array"
+          },
+          "character_name": {
+            "type": "string"
           }
         }
       }
@@ -42,21 +61,82 @@
     "gemini-omni/text-to-video": {
       "model": "Gemini Omni",
       "endpoint": "text_to_video",
+      "task_type": "asynchronous",
       "models": [
+        "gemini-omni-flash-preview",
         "gemini-omni-text-to-video"
       ],
+      "rules": [
+        {
+          "when": {
+            "model": "gemini-omni-flash-preview"
+          },
+          "forbidden": [
+            "reference_image_urls",
+            "audio_ids",
+            "video_list",
+            "character_ids",
+            "duration_seconds",
+            "seed"
+          ]
+        }
+      ],
       "fields_by_model": {
-        "gemini-omni-text-to-video": {
+        "gemini-omni-flash-preview": {
+          "model": {
+            "type": "string"
+          },
           "prompt": {
+            "type": "string",
             "required": true
           },
+          "duration_seconds": {
+            "type": "integer"
+          },
+          "callback_url": {
+            "type": "string"
+          },
+          "reference_image_urls": {
+            "type": "array"
+          },
+          "audio_ids": {
+            "type": "array"
+          },
+          "video_list": {
+            "type": "array"
+          },
+          "character_ids": {
+            "type": "array"
+          },
           "aspect_ratio": {
+            "type": "string",
             "enum": [
               "16:9",
               "9:16"
-            ]
+            ],
+            "default": "16:9"
+          },
+          "output_resolution": {
+            "type": "string",
+            "enum": [
+              "720p"
+            ],
+            "default": "720p"
+          },
+          "seed": {
+            "type": "integer"
+          }
+        },
+        "gemini-omni-text-to-video": {
+          "model": {
+            "type": "string"
+          },
+          "prompt": {
+            "type": "string",
+            "required": true
           },
           "duration_seconds": {
+            "type": "integer",
             "enum": [
               4,
               6,
@@ -65,14 +145,43 @@
             ],
             "required": true
           },
+          "callback_url": {
+            "type": "string"
+          },
+          "reference_image_urls": {
+            "type": "array",
+            "max_items": 7
+          },
+          "audio_ids": {
+            "type": "array",
+            "max_items": 3
+          },
+          "video_list": {
+            "type": "array",
+            "max_items": 1
+          },
+          "character_ids": {
+            "type": "array",
+            "max_items": 3
+          },
+          "aspect_ratio": {
+            "type": "string",
+            "enum": [
+              "16:9",
+              "9:16"
+            ]
+          },
           "output_resolution": {
+            "type": "string",
             "enum": [
               "720p",
               "1080p",
               "4k"
             ]
           },
-          "reference_image_urls": {}
+          "seed": {
+            "type": "integer"
+          }
         }
       }
     }

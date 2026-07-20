@@ -6,6 +6,9 @@
     "gemini-omni-character/create_character": {
       "unit_price_cents": 0
     },
+    "gemini-omni-flash-preview/text_to_video": {
+      "unit_price_cents": 60
+    },
     "gemini-omni-text-to-video/text_to_video": {
       "unit_price_cents": 360,
       "billing_config": {

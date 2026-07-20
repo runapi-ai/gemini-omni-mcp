@@ -1,5 +1,14 @@
 # Changelog
 
+## [v0.2.0](https://github.com/runapi-ai/gemini-omni-mcp/releases/tag/v0.2.0) - 2026-07-20
+
+### Added
+- Add Gemini Omni Flash Preview request validation, pricing lookup, and text-to-video tool support.
+
+### Fixed
+- Validate reference image, audio, video, and character collection limits from the generated contract.
+
+
 ## [v0.1.6](https://github.com/runapi-ai/gemini-omni-mcp/releases/tag/v0.1.6) - 2026-07-08
 
 ### Fixed

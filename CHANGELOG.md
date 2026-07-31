@@ -1,5 +1,11 @@
 # Changelog
 
+## [v0.2.1](https://github.com/runapi-ai/gemini-omni-mcp/releases/tag/v0.2.1) - 2026-07-31
+
+### Changed
+- Resolve MCP prices from the RunAPI Price Schedule API instead of embedded package data.
+
+
 ## [v0.2.0](https://github.com/runapi-ai/gemini-omni-mcp/releases/tag/v0.2.0) - 2026-07-20
 
 ### Added

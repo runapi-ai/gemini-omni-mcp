@@ -74,11 +74,11 @@ Ready-made examples are in [`examples/`](examples/) for Claude, Cursor, Windsurf
 
 | Tool | Auth | Purpose |
 |---|---|---|
-| `create_audio` | Yes | Run a Gemini Omni create audio operation synchronously. Returns the operation result and pricing snapshot. |
-| `create_character` | Yes | Run a Gemini Omni create character operation synchronously. Returns the operation result and pricing snapshot. |
-| `text_to_video` | Yes | Create a Gemini Omni text to video task and optionally wait for a terminal status. Returns the task id, status, output URLs, and pricing snapshot. |
+| `create_audio` | Yes | Run a Gemini Omni create audio operation synchronously. Returns the operation result. |
+| `create_character` | Yes | Run a Gemini Omni create character operation synchronously. Returns the operation result. |
+| `text_to_video` | Yes | Create a Gemini Omni text to video task and optionally wait for a terminal status. Returns the task id, status, and output URLs. |
 | `get_task` | Yes | Fetch the current status and latest payload for an existing task. |
-| `check_pricing` | No | Look up the current pricing snapshot for a Gemini Omni model and endpoint. |
+| `check_pricing` | No | Look up current pricing for a Gemini Omni model and endpoint. |
 
 ---
 

@@ -6,12 +6,12 @@
     "url": "https://github.com/runapi-ai/gemini-omni-mcp",
     "source": "github"
   },
-  "version": "0.2.1",
+  "version": "0.2.2",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "@runapi.ai/gemini-omni-mcp",
-      "version": "0.2.1",
+      "version": "0.2.2",
       "transport": {
         "type": "stdio"
       },

@@ -13,7 +13,7 @@
   <a href="https://github.com/runapi-ai/gemini-omni-mcp"><img src="https://img.shields.io/badge/GitHub-runapi--ai%2Fgemini--omni--mcp-24292f?style=flat-square" alt="GitHub repository"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue?style=flat-square" alt="Apache-2.0 license"></a>
   <img src="https://img.shields.io/badge/Type-MCP_Server-blue?style=flat-square" alt="MCP Server">
-  <img src="https://img.shields.io/badge/Models-4-16a34a?style=flat-square" alt="4 models">
+  <img src="https://img.shields.io/badge/Models-5-16a34a?style=flat-square" alt="5 models">
 </p>
 
 <p align="center">
@@ -30,7 +30,7 @@
 ## Why This Package?
 
 `@runapi.ai/gemini-omni-mcp` is a focused Model Context Protocol server for the **Gemini Omni** model line on RunAPI.
-It gives MCP-compatible assistants direct access to 3 endpoints and 4 model variants without loading the full RunAPI catalog.
+It gives MCP-compatible assistants direct access to 3 endpoints and 5 model variants without loading the full RunAPI catalog.
 
 Use this per-model server when an agent should stay scoped to Gemini Omni. Use [`@runapi.ai/mcp`](https://github.com/runapi-ai/mcp) when one assistant should discover every RunAPI model line.
 
@@ -84,13 +84,13 @@ Ready-made examples are in [`examples/`](examples/) for Claude, Cursor, Windsurf
 
 ## Models
 
-Gemini Omni covers 4 model variants across 3 endpoints. Each tool accepts the models listed for it:
+Gemini Omni covers 5 model variants across 3 endpoints. Each tool accepts the models listed for it:
 
 | Tool | Models |
 |---|---|
 | `create_audio` | `gemini-omni-audio` |
 | `create_character` | `gemini-omni-character` |
-| `text_to_video` | `gemini-omni-flash-preview`, `gemini-omni-text-to-video` |
+| `text_to_video` | `gemini-omni-flash-1-1`, `gemini-omni-flash-preview`, `gemini-omni-text-to-video` |
 
 Model availability can change between releases. Use `check_pricing` or the [Gemini Omni model page](https://runapi.ai/models/gemini-omni) for the current catalog view.
 

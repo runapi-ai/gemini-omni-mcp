@@ -1,5 +1,12 @@
 # Changelog
 
+## [v0.2.2](https://github.com/runapi-ai/gemini-omni-mcp/releases/tag/v0.2.2) - 2026-09-07
+
+### Added
+- Add gemini-omni-flash-1-1 video generation with frame controls and model-specific validation.
+- Expose the optional full-body character reference field in the Gemini Omni MCP contract.
+
+
 ## [v0.2.1](https://github.com/runapi-ai/gemini-omni-mcp/releases/tag/v0.2.1) - 2026-07-31
 
 ### Changed

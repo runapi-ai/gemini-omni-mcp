@@ -73,7 +73,7 @@ describe("gemini-omni stdio MCP server", () => {
 
     // Every advertised model must price without naming an endpoint, even one
     // that only lives on a non-primary endpoint of a multi-endpoint line.
-    for (const model of ["gemini-omni-audio","gemini-omni-character","gemini-omni-flash-preview","gemini-omni-text-to-video"]) {
+    for (const model of ["gemini-omni-audio","gemini-omni-character","gemini-omni-flash-1-1","gemini-omni-flash-preview","gemini-omni-text-to-video"]) {
       const priced = await client.callTool({ name: "check_pricing", arguments: { model } });
       const pricedContent = priced.content?.[0];
       if (!pricedContent || pricedContent.type !== "text") {

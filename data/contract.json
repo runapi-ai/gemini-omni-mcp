@@ -90,57 +90,6 @@
         "gemini-omni-flash-preview",
         "gemini-omni-text-to-video"
       ],
-      "rules": [
-        {
-          "when": {
-            "model": "gemini-omni-flash-1-1",
-            "first_frame_image_url": {
-              "present": true
-            }
-          },
-          "forbidden": [
-            "reference_image_urls",
-            "audio_ids",
-            "video_list",
-            "character_ids"
-          ]
-        },
-        {
-          "when": {
-            "model": "gemini-omni-flash-1-1",
-            "last_frame_image_url": {
-              "present": true
-            }
-          },
-          "required": [
-            "first_frame_image_url"
-          ]
-        },
-        {
-          "when": {
-            "model": "gemini-omni-flash-preview"
-          },
-          "forbidden": [
-            "reference_image_urls",
-            "audio_ids",
-            "video_list",
-            "character_ids",
-            "first_frame_image_url",
-            "last_frame_image_url",
-            "duration_seconds",
-            "seed"
-          ]
-        },
-        {
-          "when": {
-            "model": "gemini-omni-text-to-video"
-          },
-          "forbidden": [
-            "first_frame_image_url",
-            "last_frame_image_url"
-          ]
-        }
-      ],
       "fields_by_model": {
         "gemini-omni-flash-1-1": {
           "model": {

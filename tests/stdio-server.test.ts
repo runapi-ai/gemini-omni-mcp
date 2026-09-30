@@ -58,7 +58,6 @@ describe("gemini-omni stdio MCP server", () => {
     const tools = await client.listTools();
     const names = tools.tools.map((tool) => tool.name).sort();
     expect(names).toEqual(["check_pricing","create_audio","create_character","get_task","login","text_to_video"]);
-
     for (const endpoint of ["create_audio","create_character"]) {
       const tool = tools.tools.find((candidate) => candidate.name === endpoint);
       expect(tool?.inputSchema.properties, `${endpoint} is synchronous and must not expose polling controls`).not.toHaveProperty("wait");
